@@ -12,7 +12,7 @@
     if (startIndex >= covers.Length)//we have processed all covers
     {
       for (int i = 0; i < covers.Length; i++)
-        Print("" + counts[i] + " counts of cover width: " + covers[i] + "+"); //format the print out as "amount=?*25 + ?*10+..."
+        Print("" + counts[i] + " counts of pannel width: " + covers[i] + "+"); //format the print out as "amount=?*25 + ?*10+..."
       Print("\n"); //need a new line per case
       return;
     }
@@ -24,7 +24,7 @@
     {
       if (totalAmount % covers[startIndex] == 0)//good combination
       {
-        counts[startIndex] = totalAmount / covers[startIndex]; //set the counts of coins at start index
+        counts[startIndex] = totalAmount / covers[startIndex]; //set the counts of covers at start index
         Combination(covers, counts, startIndex + 1, 0); //proceed to recursive call //notice startIndex+1 and remaining amount = 0
       }
     }
@@ -32,7 +32,7 @@
     {
       for (int i = 0; i <= totalAmount / covers[startIndex]; i++)
       {
-        counts[startIndex] = i; //for every cycle in a loop, we choose an arbitrary number of larger coins and proceed next
+        counts[startIndex] = i; //for every cycle in a loop, we choose an arbitrary number of larger pannels and proceed next
         Combination(covers, counts, startIndex + 1, totalAmount - covers[startIndex] * i); //notice we need update the remaining amount
       }
       
