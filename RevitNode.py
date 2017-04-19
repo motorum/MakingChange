@@ -1,5 +1,3 @@
- ```
-
 n = int(IN[0])
 
 panel_a = IN[1]
@@ -23,5 +21,3 @@ def change(n, coins_avalible, coins_so_far):
 solutions = [s for s in change(n, coins, [])]
 
 OUT = solutions
-
- ```
